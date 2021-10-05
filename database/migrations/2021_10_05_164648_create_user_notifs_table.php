@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToGalleriesTable extends Migration
+class CreateUserNotifsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddColumnToGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('galleries', function (Blueprint $table) {
-            //
-            $table->string('client_type')->nullable();
+        Schema::create('user_notifs', function (Blueprint $table) {
+            $table->id();
+            $table->string('details')->nullable();
+            $table->string('date')->nullable();
+            $table->string('user_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -26,9 +29,6 @@ class AddColumnToGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('galleries', function (Blueprint $table) {
-            //
-            $table->dropIfExists('cleint_type');
-        });
+        Schema::dropIfExists('user_notifs');
     }
 }

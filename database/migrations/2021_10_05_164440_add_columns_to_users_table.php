@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeDescriptionColumnToCoursesTable extends Migration
+class AddColumnsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class ChangeDescriptionColumnToCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::table('courses', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->longText('description')->nullable()->change();
+            $table->string('user_type')->nullable();
+            $table->string('user_info_id')->nullable();
         });
     }
 
@@ -26,9 +27,10 @@ class ChangeDescriptionColumnToCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::table('courses', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropIfExists('description');
+            $table->dropIfExists('user_type');
+            $table->dropIfExists('user_info_id');
         });
     }
 }

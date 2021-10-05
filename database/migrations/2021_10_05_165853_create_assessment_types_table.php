@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnLocationIdToUsersTable extends Migration
+class CreateAssessmentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddColumnLocationIdToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->unsignedBigInteger('location_id')->nullable();
-            $table->foreign('location_id')->references('id')->on('locations');
+        Schema::create('assessment_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('assessment')->nullable();
+            $table->string('percentage')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,8 +28,6 @@ class AddColumnLocationIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('assessment_types');
     }
 }

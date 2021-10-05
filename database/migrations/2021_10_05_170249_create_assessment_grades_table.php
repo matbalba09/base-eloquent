@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCourseMaterialsTable extends Migration
+class CreateAssessmentGradesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCourseMaterialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('course_materials', function (Blueprint $table) {
+        Schema::create('assessment_grades', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->nullable();
-            $table->string('path')->nullable();
-            $table->unsignedBigInteger('course_id')->nullable();
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->string('quarter')->nullable();
+            $table->string('school_year')->nullable();
+            $table->string('assessment_id')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateCourseMaterialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_materials');
+        Schema::dropIfExists('assessment_grades');
     }
 }

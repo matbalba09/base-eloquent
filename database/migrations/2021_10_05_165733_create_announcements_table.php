@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToCoursesTable extends Migration
+class CreateAnnouncementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddColumnToCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::table('courses', function (Blueprint $table) {
-            //
-            $table->string('image')->nullable();
+        Schema::create('announcements', function (Blueprint $table) {
+            $table->id();
+            $table->string('details')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -26,9 +27,6 @@ class AddColumnToCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::table('courses', function (Blueprint $table) {
-            //
-            $table->dropIfExists('image');
-        });
+        Schema::dropIfExists('announcements');
     }
 }

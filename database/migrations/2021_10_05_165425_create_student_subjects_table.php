@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePracticesTable extends Migration
+class CreateStudentSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreatePracticesTable extends Migration
      */
     public function up()
     {
-        Schema::create('practices', function (Blueprint $table) {
+        Schema::create('student_subjects', function (Blueprint $table) {
             $table->id();
+            $table->string('student_id')->nullable();
+            $table->string('subject_id')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreatePracticesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('practices');
+        Schema::dropIfExists('student_subjects');
     }
 }
