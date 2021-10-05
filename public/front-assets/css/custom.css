@@ -1,0 +1,110 @@
+/*  */
+#header.header-scrolled {
+    background: #fff;
+}
+
+#header.header-scrolled a.nav-link,
+#header.header-scrolled h1.logo a {
+    color: #000;
+}
+
+.btn-primary {
+    background: #f36827;
+    border-color: #f36827;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px 9px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #dd5618;
+    border-color: #dd5618;
+}
+
+.btn-secondary {
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px 9px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    left: 48% !important;
+}
+
+.cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../img/1.jpg") fixed center center;
+    background-size: cover;
+}
+
+#hero {
+    background: url("../img/Cindy.jpg") top center;
+    background-size: cover;
+}
+
+.counts .title {
+    color: #000;
+}
+
+.counts .counters p {
+    color: #000;
+}
+
+.btn-learn-more {
+    margin-top: 50px;
+}
+
+#page-header {
+    width: 100%;
+    height: 40vh;
+    background: url("../img/courses.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#page-header:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#page-header .container {
+    padding-top: 72px;
+    position: relative;
+    text-align: center;
+}
+
+#page-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+}
+
+#page-header h2 {
+    color: #eee;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+#content {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.about-content {
+    padding: 30px 120px;
+}
